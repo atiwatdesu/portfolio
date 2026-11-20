@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>เส้นทางการเป็นล่ามญี่ปุ่น | 通訳者への道</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Serif+Thai:wght@500;700&family=Noto+Sans+Thai:wght@400;500&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{
+  --bg:#F5F4F0;
+  --ink:#1E242B;
+  --indigo:#23406B;
+  --muted:#5E6673;
+  --rule:#DCD8CE;
+  --seal:#B8382B;
+  --serif:'Shippori Mincho','Noto Serif Thai','Hiragino Mincho ProN',serif;
+  --sans:'Noto Sans Thai','Hiragino Sans',system-ui,sans-serif;
+  --c1:#B55876;--c2:#2D72A1;--c3:#A67121;--c4:#497F3E;--c5:#258280;--c6:#B8382B;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#12151B;--ink:#E5E3DD;--indigo:#8FB0E3;--muted:#939AA6;--rule:#2A303C;--seal:#DF5D4F;
+    --c1:#E895B0;--c2:#7DB6E0;--c3:#DFB14B;--c4:#88BC77;--c5:#5CC5C1;--c6:#DF5D4F;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#12151B;--ink:#E5E3DD;--indigo:#8FB0E3;--muted:#939AA6;--rule:#2A303C;--seal:#DF5D4F;
+  --c1:#E895B0;--c2:#7DB6E0;--c3:#DFB14B;--c4:#88BC77;--c5:#5CC5C1;--c6:#DF5D4F;
+  color-scheme:dark;
+}
+html{scroll-behavior:smooth;scroll-padding-top:2rem}
+*,*::before,*::after{box-sizing:inherit}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font:400 1.03rem/1.9 var(--sans);
+  overflow-x:clip;
+}
+a{color:var(--indigo);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--indigo) 35%,transparent)}
+a:hover{border-bottom-color:var(--indigo)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--seal);outline-offset:3px}
+
+.wrap{max-width:60rem;margin:0 auto;padding:0 1.75rem}
+h1,h2,.yr{font-family:var(--serif);font-weight:700;margin:0;line-height:1.32}
+
+/* Header */
+.intro{
+  position:relative;padding:5.5rem 0 3.75rem;
+  display:flex;gap:2.25rem;align-items:flex-start;
+  border-bottom:1px solid var(--rule);margin-bottom:4rem;
+}
+.seal{
+  flex:none;width:3.5rem;height:3.5rem;display:grid;place-items:center;
+  border:2px solid var(--seal);border-radius:2px;color:var(--seal);
+  font:700 1.1rem/1.05 var(--serif);text-align:center;
+  transform:rotate(-2deg);
+}
+.intro-inner{position:relative;z-index:1;max-width:36rem}
+.name{
+  display:block;color:var(--ink);font:700 1.05rem var(--serif);
+  letter-spacing:.02em;margin-bottom:.75rem;
+}
+.intro h1{font-size:clamp(1.9rem,4.5vw,2.85rem)}
+.intro .jp{
+  font-family:var(--serif);color:var(--indigo);font-size:1.15rem;
+  margin:.55rem 0 0;letter-spacing:.12em;
+}
+.intro p{color:var(--muted);margin:1.25rem 0 0;font-size:1rem}
+
+/* Ghost Kanji */
+.ghost{
+  position:absolute;right:0;top:-.5rem;z-index:0;
+  font:700 clamp(7rem,19vw,11.5rem)/1 var(--serif);
+  color:var(--indigo);opacity:.065;pointer-events:none;user-select:none;
+  will-change:transform;transition:opacity .5s;
+}
+.hero-ghost{top:1.5rem;opacity:.055}
+.entry.on .ghost{opacity:.11}
+.now .ghost{color:var(--seal)}
+
+/* Timeline */
+.track{position:relative;padding-top:.5rem;isolation:isolate}
+.line,.fill{position:absolute;top:0;bottom:0;left:50%;width:1.5px;margin-left:-.75px}
+.line{background:var(--rule)}
+.fill{
+  background:linear-gradient(to bottom,var(--c1),var(--c2),var(--c3),var(--c4),var(--c5),var(--c6));
+  clip-path:inset(0 0 100% 0);
+}
+
+.entry{
+  position:relative;display:grid;grid-template-columns:1fr 4.5rem 1fr;
+  align-items:start;padding-bottom:6.5rem;
+}
+.entry:nth-of-type(1){--c:var(--c1)}
+.entry:nth-of-type(2){--c:var(--c2)}
+.entry:nth-of-type(3){--c:var(--c3)}
+.entry:nth-of-type(4){--c:var(--c4)}
+.entry:nth-of-type(5){--c:var(--c5)}
+.entry:nth-of-type(6){--c:var(--c6)}
+.entry{--indigo:var(--c)}
+
+/* Subtle Band */
+.entry::before{
+  content:"";position:absolute;z-index:-1;top:-2rem;bottom:1rem;
+  left:calc(50% - 50vw);right:calc(50% - 50vw);
+  background:linear-gradient(to bottom,transparent,color-mix(in srgb,var(--c) 7%,transparent) 25%,color-mix(in srgb,var(--c) 7%,transparent) 75%,transparent);
+}
+
+.txt{grid-column:1;grid-row:1;position:relative;z-index:1;padding-right:1.25rem}
+.dot{grid-column:2;grid-row:1;position:relative;height:3rem}
+.pic{grid-column:3;grid-row:1;margin:0;position:relative;z-index:1;padding-left:1.25rem;padding-top:2.75rem}
+
+.flip .txt{grid-column:3;padding-right:0;padding-left:1.25rem}
+.flip .pic{grid-column:1;padding-left:0;padding-right:1.25rem}
+
+.yr{
+  font-size:clamp(2.1rem,4.5vw,3rem);color:var(--muted);
+  text-align:right;margin-bottom:1.1rem;letter-spacing:.01em;
+  transition:color .4s;
+}
+.flip .yr{text-align:left}
+.yr small{
+  display:inline-block;margin-left:.6rem;vertical-align:middle;
+  font:500 .82rem var(--sans);color:var(--seal);
+  border:1px solid color-mix(in srgb,var(--seal) 45%,transparent);
+  padding:.1rem .55rem;border-radius:2px;
+}
+
+.dot::before{
+  content:"";position:absolute;left:50%;top:1.15rem;
+  width:.85rem;height:.85rem;margin-left:-.425rem;border-radius:50%;
+  background:var(--bg);border:2px solid var(--rule);
+  transition:background .4s,border-color .4s,box-shadow .4s;
+}
+.entry.on .yr{color:var(--c)}
+.entry.on .dot::before{
+  background:var(--c);border-color:var(--c);
+  box-shadow:0 0 0 5px color-mix(in srgb,var(--c) 14%,transparent);
+}
+
+/* Frameless Editorial Typography */
+.body{
+  text-align:right;
+  padding-top:1.1rem;
+  border-top:1px solid var(--rule);
+  transition:border-color .4s;
+}
+.entry.on .body{border-top-color:color-mix(in srgb,var(--c) 55%,var(--rule))}
+.flip .body{text-align:left}
+
+.body h2{font-size:1.25rem;margin-bottom:.75rem;color:var(--ink)}
+.body p{margin:0;color:var(--muted);font-size:.98rem}
+
+/* Photo Plate: รูปเฟดกลืนพื้นหลัง */
+.pic img{
+  display:block;width:100%;max-width:24rem;height:auto;margin:0 auto;
+  border:0;background:none;
+
+  /* เฟดขอบ 4 ด้าน: ซ้อนแนวนอน + แนวตั้งแล้วเอาส่วนที่ทับกัน */
+  -webkit-mask-image:
+    linear-gradient(to right,transparent,#000 22%,#000 78%,transparent),
+    linear-gradient(to bottom,transparent,#000 22%,#000 78%,transparent);
+  -webkit-mask-composite:source-in;
+  mask-image:
+    linear-gradient(to right,transparent,#000 22%,#000 78%,transparent),
+    linear-gradient(to bottom,transparent,#000 22%,#000 78%,transparent);
+  mask-composite:intersect;
+}
+.pic img.photo{aspect-ratio:4/3;object-fit:cover}
+.pic img.logo{
+  max-width:16rem;aspect-ratio:1/1;object-fit:contain;
+  padding:1.75rem;           /* เว้นขอบให้ตัวโลโก้อยู่ในส่วนที่ไม่จาง */
+  background:#fff;
+}
+  max-width:16rem;aspect-ratio:1/1;object-fit:contain;
+  padding:1.25rem;
+}
+
+/* Reveal */
+.js .yr,.js .body,.js .pic{opacity:0;transition:opacity .7s ease,transform .6s ease,color .4s}
+.js .entry.on .yr,.js .entry.on .body,.js .entry.on .pic{opacity:1}
+@media (prefers-reduced-motion:no-preference){
+  .js .entry:not(.on) .body,.js .entry:not(.on) .pic{transform:translateY(14px)}
+}
+
+/* Contact & Footer */
+.contact{
+  padding:3rem 0 4.5rem;text-align:center;
+  border-top:1px solid var(--rule);margin-top:1rem;
+}
+.contact h2{font-size:1.4rem;margin-bottom:.75rem}
+.contact p{margin:0 0 .45rem;color:var(--muted)}
+.note{
+  font-size:.83rem;color:var(--muted);
+  padding:1.5rem 0 3rem;border-top:1px solid var(--rule);
+  display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;
+}
+.theme-link{
+  background:none;border:0;padding:0;font:inherit;color:var(--indigo);
+  cursor:pointer;border-bottom:1px dashed var(--indigo);
+}
+
+@media (max-width:48rem){
+  .intro{flex-direction:column;gap:1.25rem;padding:3.5rem 0 2.5rem;margin-bottom:2.5rem}
+  .line,.fill{left:.6rem}
+  .entry,.flip{grid-template-columns:1.2rem 1fr;padding-bottom:4.5rem}
+  .dot{grid-column:1;grid-row:1 / span 2;height:auto}
+  .txt,.flip .txt{grid-column:2;grid-row:1;padding:0 0 0 1.25rem}
+  .pic,.flip .pic{grid-column:2;grid-row:2;padding:1.75rem 0 0 1.25rem}
+  .pic img{margin:0}
+  .yr,.flip .yr,.body,.flip .body{text-align:left}
+  .dot::before{top:.95rem}
+  .contact{text-align:left;padding-left:2.45rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .js .yr,.js .body,.js .pic{opacity:1;transition:none}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="intro">
+    <div class="ghost hero-ghost" aria-hidden="true">橋</div>
+    <div class="seal" aria-hidden="true">通<br>訳</div>
+    <div class="intro-inner">
+      <span class="name">[ชื่อของคุณ] / [お名前]</span>
+      <h1>เส้นทางการเป็นล่ามญี่ปุ่น</h1>
+      <div class="jp" lang="ja">通訳者への道</div>
+      <p>เรซูเม่หนึ่งแผ่นบอกได้แค่ว่าฉันทำอะไรมาบ้าง หน้านี้เล่าว่าทุกอย่างเริ่มต้นและต่อกันมาอย่างไร เลื่อนลงเพื่ออ่านตามเส้นไปทีละปี</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="track" id="track">
+      <div class="line" aria-hidden="true"></div>
+      <div class="fill" id="fill" aria-hidden="true"></div>
+
+      <!-- 2016 -->
+      <article class="entry">
+        <div class="ghost" aria-hidden="true">始</div>
+        <div class="txt">
+          <div class="yr">2016</div>
+          <div class="body">
+            <h2>โรงเรียนปราจีนกัลยาณี</h2>
+            <p>สำเร็จการศึกษาสายวิทยาศาสตร์–คณิตศาสตร์ พร้อมเข้าร่วมการแข่งขันสร้างเกมสร้างสรรค์จากคอมพิวเตอร์ระดับเขต และการแข่งขันสะกดคำศัพท์ภาษาอังกฤษ NJ Spelling Bee 2016 ในปีเดียวกัน</p>
+          </div>
+        </div>
+        <div class="dot" aria-hidden="true"></div>
+        <figure class="pic">
+          <img class="logo" src="images/2016-school-logo.jpg"
+               alt="ตราสัญลักษณ์โรงเรียนปราจีนกัลยาณี"
+               width="500" height="500" loading="lazy">
+        </figure>
+      </article>
+
+      <!-- 2017–2020 -->
+      <article class="entry flip">
+        <div class="ghost" aria-hidden="true">学</div>
+        <div class="txt">
+          <div class="yr">2017–2020</div>
+          <div class="body">
+            <h2>มหาวิทยาลัยรามคำแหง</h2>
+            <p>สำเร็จการศึกษาระดับปริญญาตรี คณะมนุษยศาสตร์ เอกภาษาญี่ปุ่น วิชาโทภาษาอังกฤษ และผ่านการสอบวัดระดับความรู้ภาษาญี่ปุ่น JLPT N2 ในปี 2020</p>
+          </div>
+        </div>
+        <div class="dot" aria-hidden="true"></div>
+        <figure class="pic">
+          <img class="logo" src="images/2017-ramkhamhaeng-logo.jpg"
+               alt="ตราสัญลักษณ์มหาวิทยาลัยรามคำแหง"
+               width="407" height="500" loading="lazy">
+        </figure>
+      </article>
+
+      <!-- 2022 -->
+      <article class="entry">
+        <div class="ghost" aria-hidden="true">初</div>
+        <div class="txt">
+          <div class="yr">2022</div>
+          <div class="body">
+            <h2>Thai Takeda Lace Co., Ltd.</h2>
+            <p>ผู้ผลิตและนำเข้า–ส่งออกผ้าลูกไม้ ในเครือสหพัฒน์ อ.กบินทร์บุรี จ.ปราจีนบุรี ปฏิบัติหน้าที่ล่ามภาษาญี่ปุ่นเป็นเวลา 1 ปี รับผิดชอบการประสานงานและแปลในแผนกผลิต (โรงถัก โรงย้อม โรงตัด) ฝ่ายควบคุมคุณภาพ งานแปลเอกสาร และการล่ามประชุมภายในแผนก</p>
+          </div>
+        </div>
+        <div class="dot" aria-hidden="true"></div>
+        <figure class="pic">
+          <img class="photo" src="images/2022-lace.jpg"
+               alt="ผ้าลูกไม้ลายดอกไม้"
+               width="1254" height="1254" loading="lazy">
+        </figure>
+      </article>
+
+      <!-- 2023 -->
+      <article class="entry flip">
+        <div class="ghost" aria-hidden="true">入</div>
+        <div class="txt">
+          <div class="yr">2023</div>
+          <div class="body">
+            <h2>Motherson Yutaka Systems and Technologies (THAILAND)</h2>
+            <p>ผู้ผลิตและจำหน่ายชิ้นส่วนรถยนต์ (Torque Converter, ชิ้นส่วนเกียร์, Catalytic Converter, ท่อไอเสีย) เริ่มปฏิบัติงานในตำแหน่งล่ามภาษาญี่ปุ่นแผนกผลิต รับผิดชอบการสื่อสารและแปลด้านเทคนิคในไลน์ Torque Converter, Exhaust Silencer, Catalytic Converter, Stamping และ Maintenance ตลอด 2 ปีแรก</p>
+          </div>
+        </div>
+        <div class="dot" aria-hidden="true"></div>
+        <figure class="pic">
+          <img class="photo" src="images/2023-auto-parts.jpg"
+               alt="Torque Converter, Catalytic Converter และท่อไอเสีย"
+               width="1536" height="1024" loading="lazy">
+        </figure>
+      </article>
+
+      <!-- 2025 -->
+      <article class="entry">
+        <div class="ghost" aria-hidden="true">声</div>
+        <div class="txt">
+          <div class="yr">2025</div>
+          <div class="body">
+            <h2>Motherson Yutaka Systems and Technologies (THAILAND)</h2>
+            <p>ขยายบทบาทสู่การเป็นล่ามและพิธีกรในกิจกรรมของโรงงาน ทั้งการบรรยายแนะนำโรงงานต้อนรับลูกค้าผู้มาเยี่ยมชม งานเลี้ยงอำลาบุคลากรชาวญี่ปุ่น และงานกีฬาสีประจำปี</p>
+          </div>
+        </div>
+        <div class="dot" aria-hidden="true"></div>
+        <figure class="pic">
+          <img class="photo" src="images/2025-mc.jpg"
+               alt="ผู้บรรยายถือไมโครโฟนในชุดสูท"
+               width="640" height="427" loading="lazy">
+        </figure>
+      </article>
+
+      <!-- 2026 -->
+      <article class="entry flip now">
+        <div class="ghost" aria-hidden="true">今</div>
+        <div class="txt">
+          <div class="yr">2026<small>ปัจจุบัน</small></div>
+          <div class="body">
+            <h2>Motherson Yutaka Systems and Technologies (THAILAND)</h2>
+            <p>ปัจจุบันร่วมสนับสนุนงานแปลในบางกรณีให้แก่แผนก Engineer และ New Model รวมถึงมีประสบการณ์จากการเดินทางไปปฏิบัติงาน Business Trip ที่ประเทศจีนและประเทศญี่ปุ่น</p>
+          </div>
+        </div>
+        <div class="dot" aria-hidden="true"></div>
+        <figure class="pic">
+          <img class="photo" src="images/2026-flight.jpg"
+               alt="เครื่องบินเหนือทะเลเมฆยามพระอาทิตย์ตก"
+               width="640" height="427" loading="lazy">
+        </figure>
+      </article>
+    </div>
+
+    <section class="contact" id="contact">
+      <h2>เรื่องนี้ยังเขียนต่อได้</h2>
+      <p>ถ้าสนใจร่วมงานกัน ติดต่อได้ที่</p>
+      <p><a href="mailto:you@example.com">you@example.com</a></p>
+      <p>LINE: [ไอดีของคุณ] &nbsp;|&nbsp; โทร: [เบอร์โทร]</p>
+    </section>
+  </main>
+
+  <footer class="note">
+    <span>ข้อความในวงเล็บเหลี่ยม [ ] เป็นตัวอย่าง ให้แทนด้วยเรื่องจริงของคุณ</span>
+    <button class="theme-link" id="themeToggle" type="button">สลับโหมดสีหน้าจอ</button>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var track=document.getElementById('track'), fill=document.getElementById('fill');
+  var entries=[].slice.call(document.querySelectorAll('.entry')), ticking=false;
+  var still=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function update(){
+    ticking=false;
+    var vh=window.innerHeight, mark=vh*0.6, r=track.getBoundingClientRect();
+    var p=Math.max(0,Math.min(1,(mark-r.top)/r.height));
+    fill.style.clipPath='inset(0 0 '+((1-p)*100).toFixed(2)+'% 0)';
+    entries.forEach(function(e){
+      var d=e.getBoundingClientRect();
+      e.classList.toggle('on', d.top+24 < mark);
+      var g=e.querySelector('.ghost');
+      if(g&&!still){g.style.transform='translateY('+((d.top+d.height/2-vh/2)*-0.14).toFixed(1)+'px)'}
+    });
+  }
+  function req(){ if(!ticking){ticking=true;requestAnimationFrame(update)} }
+  window.addEventListener('scroll',req,{passive:true});
+  window.addEventListener('resize',req);
+  update();
+
+  var btn=document.getElementById('themeToggle'), root=document.documentElement, cur=0, modes=['auto','light','dark'];
+  btn.addEventListener('click',function(){
+    cur=(cur+1)%modes.length;
+    if(modes[cur]==='auto') root.removeAttribute('data-theme');
+    else root.setAttribute('data-theme',modes[cur]);
+  });
+})();
+</script>
+</body>
+</html>
